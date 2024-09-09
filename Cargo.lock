@@ -1250,6 +1250,7 @@ name = "guest"
 version = "0.1.0"
 dependencies = [
  "jolt-sdk",
+ "zikzakzoo-core",
 ]
 
 [[package]]
@@ -3779,4 +3780,12 @@ version = "0.1.0"
 dependencies = [
  "guest",
  "jolt-sdk",
+ "zikzakzoo-core",
+]
+
+[[package]]
+name = "zikzakzoo-core"
+version = "0.1.0"
+dependencies = [
+ "serde",
 ]
