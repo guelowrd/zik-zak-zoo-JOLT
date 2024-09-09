@@ -1,5 +1,5 @@
 use std::io;
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::time::SystemTime;
 use zikzakzoo_core::Player;
 use zikzakzoo_core::Cell;
 use zikzakzoo_core::Board;
@@ -14,10 +14,15 @@ fn main() {
     println!("Welcome to ZiK-ZaK-Zoo!");
     let human = Player { symbol: Cell::Z };
     let computer = Player { symbol: Cell::K };
-    let seed = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
+    println!("We're going to create a random seed for the game. Press Enter to start the timer, then press Enter again to stop it.");
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let start = SystemTime::now();
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let end = SystemTime::now();
+    let seed = end.duration_since(start)
         .expect("Time went backwards")
-        .as_secs();
+        .as_nanos() as u64;
     let mut rng = SimpleRNG::new(seed);
 
     let game_round = play_game(&human, &computer, &mut rng);
