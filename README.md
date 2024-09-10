@@ -1,6 +1,6 @@
 # ZiK-ZaK-Zoo JOLT
 
-ZiK-ZaK-Zoo JOLT is a Tic-Tac-Toe-like game with a twist, implemented in Rust and utilizing the JOLT framework for zero-knowledge proofs.
+ZiK-ZaK-Zoo JOLT is a Tic-Tac-Toe-like game with a twist, implemented in Rust and utilizing the [JOLT](https://jolt.a16zcrypto.com/) framework for zero-knowledge proofs.
 
 ## Features
 
@@ -10,7 +10,7 @@ ZiK-ZaK-Zoo JOLT is a Tic-Tac-Toe-like game with a twist, implemented in Rust an
 
 ## How it works
 
-1. The game uses a custom pseudo random number generator ((LCR)[https://en.wikipedia.org/wiki/Linear_congruential_generator] with (MMIX)[https://en.wikipedia.org/wiki/MMIX] parameters) seeded by the time between 2 user inputs.
+1. The game uses a custom pseudo random number generator ([LCR](https://en.wikipedia.org/wiki/Linear_congruential_generator) with [MMIX](https://en.wikipedia.org/wiki/MMIX) parameters) seeded by the time between 2 user inputs.
 2. Players take turns placing 'Z' (human) and 'K' (computer) on a 3x3 grid.
 3. The game records the seed and player moves.
 4. After a win, the game generates a zero-knowledge proof of the player's victory (taking seed + moves as inputs), and verifies it.
